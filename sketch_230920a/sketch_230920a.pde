@@ -4,6 +4,7 @@ String title, footer;
 PFont titleFont, footerFont;
 color purple, resetDefaultInk;
 int sizeFont;
+float xTitle, yTitle, widthTitle, heightTitle;
 //
 void setup() {
   fullScreen(); //displayWidth & displayHeight
@@ -15,9 +16,12 @@ void setup() {
   //
   // Text Setup
   // Fonts from OS (Operating System)
-  // titleFont = ;
-  //footerFont = ;
-  //
+  String[] fontList = PFont.list(); //Lists all fonts available on OS
+  printArray(fontList);
+  
+  titleFont = createFont("NSimSun", 55);
+  footerFont = createFont("InkFree", 55); //Verify the font exists in Processing.Java
+  // Tools / Create Font / Find Font / Do not press OK, known bug
 } //End setup
 //
 void draw() {
@@ -25,7 +29,7 @@ void draw() {
   //
   //Drawing Font Code
   //
-  rect( xTitle, yTitle, widthTitle, heightTitle ); //Title: WAHOO!!
+  //rect( xTitle, yTitle, widthTitle, heightTitle ); //Title: WAHOO!!
   //rect(  xFooter, yFooter, widthFooter, heightFooter ); //Footer: drip
 } //End draw
 //
