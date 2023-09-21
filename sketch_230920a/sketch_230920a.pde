@@ -2,8 +2,8 @@
 int appWidth, appHeight;
 String title, footer;
 PFont titleFont, footerFont;
-color purple, resetDefaultInk;
-int sizeFont;
+color green=#77CB86, resetDefaultInk=#FFFFFF;
+int sizeFont, size;
 float xTitle, yTitle, widthTitle, heightTitle;
 float xFooter, yFooter, widthFooter, heightFooter;
 //
@@ -41,6 +41,12 @@ void draw() {
   //Text is same size or relative to rect()
   //
   //Drawing Font Code
+  fill(green);
+  textAlign(CENTER, CENTER);
+  //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
+  size = 10;
+  textFont(titleFont, size);
+  text();
   //
   rect( xTitle, yTitle, widthTitle, heightTitle ); //Title: WAHOO!!
   rect(  xFooter, yFooter, widthFooter, heightFooter ); //Footer: drip
