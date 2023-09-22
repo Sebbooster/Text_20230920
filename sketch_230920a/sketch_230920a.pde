@@ -1,8 +1,8 @@
 //Global Variables
 int appWidth, appHeight;
-String title, footer;
+String title = "Wahoo!!", footer="drip";
 PFont titleFont, footerFont;
-color green=#77CB86, resetDefaultInk=#FFFFFF;
+color green=#77CB86, resetDefaultInk=#FFFFFF, purple=#7E02C1;
 int sizeFont, size;
 float xTitle, yTitle, widthTitle, heightTitle;
 float xFooter, yFooter, widthFooter, heightFooter;
@@ -35,21 +35,28 @@ void setup() {
   titleFont = createFont("NSimSun", 55);
   footerFont = createFont("InkFree", 55); //Verify the font exists in Processing.Java
   // Tools / Create Font / Find Font / Do not press OK, known bug
+  rect( xTitle, yTitle, widthTitle, heightTitle ); //Title: WAHOO!!
+  rect(  xFooter, yFooter, widthFooter, heightFooter ); //Footer: drip
 } //End setup
 //
 void draw() {
   //Text is same size or relative to rect()
   //
   //Drawing Font Code
-  fill(green);
+  fill(green); //ink
   textAlign(CENTER, CENTER);
   //Values: [ LEFT | CENTER | RIGHT ] & [ TOP | CENTER | BOTTOM | BASELINE ]
-  size = 10;
+  size = 200;
   textFont(titleFont, size);
-  text();
-  //
-  rect( xTitle, yTitle, widthTitle, heightTitle ); //Title: WAHOO!!
-  rect(  xFooter, yFooter, widthFooter, heightFooter ); //Footer: drip
+  text(title, xTitle, yTitle, widthTitle, heightTitle);
+  fill(purple);
+  text(footer, xFooter, yFooter, widthFooter, heightFooter);
+  textAlign(CENTER, TOP);
+  textFont(footerFont, size);
+  text(footer, xFooter, yFooter, widthFooter, heightFooter);
+  fill(resetDefaultInk);
+  //rect( xTitle, yTitle, widthTitle, heightTitle ); //Title: WAHOO!!
+  //rect(  xFooter, yFooter, widthFooter, heightFooter ); //Footer: drip
 } //End draw
 //
 void keyPressed() {} // End keyPressed
