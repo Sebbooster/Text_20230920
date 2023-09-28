@@ -6,6 +6,7 @@ color green=#77CB86, resetDefaultInk=#FFFFFF, purple=#7E02C1;
 int sizeFont, size;
 float xTitle, yTitle, widthTitle, heightTitle;
 float xFooter, yFooter, widthFooter, heightFooter;
+float BHeight,
 //
 void setup() {
   fullScreen(); //displayWidth & displayHeight
@@ -35,6 +36,7 @@ void setup() {
   titleFont = createFont("NSimSun", 55);
   footerFont = createFont("InkFree", 55); //Verify the font exists in Processing.Java
   // Tools / Create Font / Find Font / Do not press OK, known bug
+  fill(0);
   rect( xTitle, yTitle, widthTitle, heightTitle ); //Title: WAHOO!!
   rect(  xFooter, yFooter, widthFooter, heightFooter ); //Footer: drip
 } //End setup
